@@ -91,6 +91,7 @@ export const ThirdProj = () => {
             <div className="projWrapOfThird" onClick={() => {
              gsap.to('.loadDown', {
                 y: "100%",
+                opacity: 1,
                 duration: 1,
                 onComplete: () => {
                     window.scrollTo(0, 0)

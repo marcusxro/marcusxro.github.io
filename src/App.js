@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   window.scrollTo(0,0)
-  window.history.pushState({}, '', '/');
+  window.history.pushState({}, '', '/home');
   window.dispatchEvent(new PopStateEvent('popstate'));
   return (
     <div>

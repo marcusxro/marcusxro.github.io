@@ -35,7 +35,7 @@ class Router extends Component {
     const { currentRoute } = this.state;
 
     switch (currentRoute) {
-      case '/':
+      case '/home':
         return <HomePage />;
       case '/about':
         return <About />;

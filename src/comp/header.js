@@ -103,7 +103,7 @@ const Headers = () => {
         
         setTimeout(() => {
             window.scrollTo(0,0)
-            window.history.pushState({}, '', '/');
+            window.history.pushState({}, '', '/home');
             window.dispatchEvent(new PopStateEvent('popstate'));
         }, 1000)
       };
