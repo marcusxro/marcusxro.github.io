@@ -109,7 +109,7 @@ export const About = () => {
     })
     gsap.to('.circle', {
       scale: 1,
-      duration: 1,
+      duration: 2,
       scrollTrigger: {
         trigger: '.contactText',
         start: 'top 80%',

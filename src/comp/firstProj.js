@@ -8,6 +8,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import firstImg from './projImg/chatGptClone.JPG'
 import firstImgs from './projImg/chatGpt.JPG'
 
+
 export const FirstProj = () => {
     const textxHover = useRef(null)
     useEffect(() => {
@@ -96,8 +97,7 @@ export const FirstProj = () => {
                     duration: 1,
                     onComplete: () => {
                         window.scrollTo(0, 0)
-                        window.history.pushState({}, '', '/ChaatAI');
-                        window.dispatchEvent(new PopStateEvent('popstate'));
+                        window.location.href = "/ChaatAI"
 
                     }
                 })

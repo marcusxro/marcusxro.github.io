@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
 //gsap anim
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
@@ -26,7 +26,6 @@ import { resetYaxis } from '../comp/landingText';
 
 
 export const Home = () => {
-
   window.scrollTo(0, 0)
   document.title = "Marcus S."
   //lenis

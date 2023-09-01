@@ -224,13 +224,47 @@ export const UpperFooter = () => {
         My work serves as a bridge between humans and technology; it is more than just code. Users are encouraged to connect, discover, and interact.
       </div>
       <div className="hoverConBot">
-        <div className="firstHover" ref={firstHover}>
+
+        <div className="firstHover" ref={firstHover} onClick={() => {
+          gsap.to('.loadDown', {
+            y: "100%",
+            opacity: 1,
+            duration: 1,
+            onComplete: () => {
+              window.scrollTo(0, 0)
+              window.location.href = "/ChaatAI"
+
+            }
+          })
+        }}>
           <div className="firstHoverText riseUp">CHAAT AI</div>
         </div>
-        <div className="secondHover" ref={secHover}>
+        <div className="secondHover" ref={secHover} onClick={() => {
+          gsap.to('.loadDown', {
+            y: "100%",
+            opacity: 1,
+            duration: 1,
+            onComplete: () => {
+              window.scrollTo(0, 0)
+              window.location.href = "/Forcast"
+
+            }
+          })
+        }}>
           <div className="secHoverText riseUp">FORCAST APP</div>
         </div>
-        <div className="thirdHover" ref={thirHover}>
+        <div className="thirdHover" ref={thirHover} onClick={() => {
+          gsap.to('.loadDown', {
+            y: "100%",
+            opacity: 1,
+            duration: 1,
+            onComplete: () => {
+              window.scrollTo(0, 0)
+              window.location.href = "/Lexicon"
+
+            }
+          })
+        }}>
           <div className="thirdHoverText riseUp">LEXICON</div>
         </div>
       </div>

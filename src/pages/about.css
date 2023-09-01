@@ -804,7 +804,6 @@ html {
     flex-direction: column;
     font-family: "Druk Wide Bold Regular";
    mix-blend-mode: difference;
-   transition: all 1s;
 }
 
 .contactText {
