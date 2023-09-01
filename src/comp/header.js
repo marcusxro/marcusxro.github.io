@@ -100,6 +100,7 @@ const Headers = () => {
     }, []);
 
     const goToHomePage = () => {
+        
         setTimeout(() => {
             window.scrollTo(0,0)
             window.history.pushState({}, '', '/');
@@ -127,14 +128,17 @@ const Headers = () => {
 
             <div className='secAnch' onClick={() => {
                 goToHomePage()
+                window.location.reload();
 
             }}>
                 <div className='firstAnchOfSec' onClick={() => {
                 goToHomePage()
+                window.location.reload();
 
             }}>//Works</div>
                 <div className='secAnchOfSec'onClick={() => {
                 goToHomePage()
+                window.location.reload();
 
             }}>//Works</div>
             </div>

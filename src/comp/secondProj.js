@@ -88,11 +88,16 @@ const textxHover = useRef(null)
     return (
         <div>
         <div className="projWrapOfSec" onClick={() => {
-                setTimeout(() => {
-                    window.scrollTo(0,0)
-                    window.history.pushState({}, '', '/secpage');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                }, 1000)
+                gsap.to('.loadDown', {
+                    y: "100%",
+                    duration: 1,
+                    onComplete: () => {
+                        window.scrollTo(0, 0)
+                        window.history.pushState({}, '', '/Forcast');
+                        window.dispatchEvent(new PopStateEvent('popstate'));
+
+                    }
+                })
         }}>
             <div className="firstConsOfSec">
                 <div className="firstPartOfSec">

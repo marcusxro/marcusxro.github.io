@@ -10,8 +10,8 @@ export const LowerFooter = () => {
             lineHeight: "100%",
             ease: Power3.easeOut,
             scrollTrigger: {
-              trigger: '.upperFooterCon',
-              start: 'top 70%',
+              trigger: '.footerCon',
+              start: 'top 200%',
             }
           })
     })
@@ -35,7 +35,7 @@ export const LowerFooter = () => {
                 //Tiktok
             </div>
             <div className="socials">
-                //Mail
+                //Email
             </div>
         </div>
         <div className="FooterRight socials" onClick={() => {

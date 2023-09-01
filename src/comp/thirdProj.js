@@ -89,11 +89,17 @@ export const ThirdProj = () => {
     return (
         <div>
             <div className="projWrapOfThird" onClick={() => {
-                setTimeout(() => {
+             gsap.to('.loadDown', {
+                y: "100%",
+                duration: 1,
+                onComplete: () => {
                     window.scrollTo(0, 0)
-                    window.history.pushState({}, '', '/thirdpage');
+                    window.history.pushState({}, '', '/Lexicon');
                     window.dispatchEvent(new PopStateEvent('popstate'));
-                }, 1000)
+
+                }
+            })
+
             }}>
                 <div className="firstConsOfThird"  >
                     <div className="firstPartOfThird">

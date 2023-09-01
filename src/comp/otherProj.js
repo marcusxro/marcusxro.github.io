@@ -11,7 +11,7 @@ import Power3 from 'gsap';
 
 
 export const OtherProj = () => {
-    
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         //text
@@ -42,7 +42,7 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projFirst',
                 start: 'top 80%',
-        
+
             }
         })
         gsap.to('.projFirst .otherImgCon', {
@@ -54,7 +54,7 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projFirst',
                 start: 'top 80%',
-        
+
             }
         })
         //second
@@ -67,7 +67,7 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projSecond',
                 start: 'top 80%',
-        
+
             }
         })
         gsap.to('.projSecond .goDown', {
@@ -77,7 +77,7 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projSecond',
                 start: 'top 80%',
-        
+
             }
         })
         gsap.to('.projSecond .otherImgCon', {
@@ -89,7 +89,7 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projSecond',
                 start: 'top 80%',
-        
+
             }
         })
         //third
@@ -102,7 +102,7 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projThird',
                 start: 'top 80%',
-        
+
             }
         })
         gsap.to('.projThird .goDown', {
@@ -112,7 +112,7 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projThird',
                 start: 'top 80%',
-        
+
             }
         })
         gsap.to('.projThird .otherImgCon', {
@@ -124,54 +124,67 @@ export const OtherProj = () => {
             scrollTrigger: {
                 trigger: '.projThird',
                 start: 'top 80%',
-        
+
             }
         })
 
-        
+
     }, [])
 
     return (
         <div className="otherProjCon">
 
-          <div className='otherProjTitleCon'>
-            <div className="otherProjTitles">EARLY <span>WORKS</span></div>
-          </div>
+            <div className='otherProjTitleCon'>
+                <div className="otherProjTitles">EARLY <span>WORKS</span></div>
+            </div>
 
             <div className="conz">
 
-            <div className="projFirst projects">
-            <div className="otherProjTitless">
-                <div className="otherTextFIrst goDown">TODO APP</div>
-            </div>
-            <div className="otherImgCon">
-            <img src={todos}></img>
-            </div>
+                <div className="projFirst projects" onClick={() => {
+                    window.open('https://marcusxro.github.io/toDo/', '')
+                }}>
+                    <div className="otherProjTitless">
+                        <div className="otherTextFIrst goDown">TODO APP</div>
+                    </div>
+                    <div className="otherImgCon">
+                        <img src={todos}></img>
+                        <div className="firstOverlay">
+                            VISIT
+                        </div>
+                    </div>
+                </div>
 
-            </div>
+                <div className="projSecond projects" onClick={() => {
+                    window.open('https://marcusxro.github.io/quizapp/', '')
+                }}>
+                    <div className="otherProjTitless">
+                        <div className="otherTextSec goDown">QUIZ APP</div>
+                    </div>
+                    <div className="otherImgCon">
+                        <img src={fquiz}></img>
+                        <div className="secOverlay">
+                            VISIT
+                        </div>
+                    </div>
+                </div>
 
-            <div className="projSecond projects">
-            <div className="otherProjTitless">
-            <div className="otherTextSec goDown">QUIZ APP</div>
-            </div>
-                <div className="otherImgCon">
-                <img src={fquiz}></img>
+                <div className="projThird projects" onClick={() => {
+                    window.open('https://marcusxro.github.io/pwGenerator/', '')
+                }}>
+                    <div className="otherProjTitless">
+                        <div className="otherTextSec goDown">
+                            PASSWORD <br />
+                            GENERATOR
+                        </div>
+                    </div>
+                    <div className="otherImgCon">
+                        <img src={pwgen}></img>
+                        <div className="thirdOverlay">
+                            VISIT
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div className="projThird projects">
-            <div className="otherProjTitless">
-            <div className="otherTextSec goDown">
-            PASSWORD <br />
-            GENERATOR
-            </div>
-            </div>
-                <div className="otherImgCon">
-                <img src={pwgen}></img>
-                </div>
-            </div>
-            </div>
-
         </div>
     )
 }

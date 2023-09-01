@@ -26,6 +26,7 @@ import { resetYaxis } from '../comp/landingText';
 
 
 export const Home = () => {
+
   window.scrollTo(0, 0)
   document.title = "Marcus S."
   //lenis
@@ -50,9 +51,9 @@ export const Home = () => {
   //timeline
   const tl = gsap.timeline()
 
-
   //anim
   useEffect(() => {
+
     const id = setInterval(() => {
       if (cLoad >= 100) {
         clearInterval(id)
@@ -79,7 +80,7 @@ export const Home = () => {
                       onComplete: () => {
                         resetYaxis()
                         gsap.to('.sticky', { right: 0 })
-
+                        gsap.to('header', { opacity: 1, duration: 1 })
                       }
                     })
                   }
@@ -89,7 +90,10 @@ export const Home = () => {
           }
 
         })
-    } return () => { clearInterval(id) }
+    } return () => { clearInterval(id) 
+    
+    
+    }
   }, [cLoad])
 
   //scrollTrig
@@ -114,12 +118,14 @@ export const Home = () => {
       x: e.clientX,
       y: e.clientY,
       duration: 0.5,
-    });
+    }); 
+
   }
   //dom
   return (
 
     <div className="wrapp">
+      <div className='loadDown'></div>
       <div className='cursor'
         ref={cursor}></div>
       <Sticky />
@@ -132,7 +138,6 @@ export const Home = () => {
           ref={loader}>
           <h1 ref={perc}>{cLoad}</h1>
         </div>
-
 
         <div className='secondLoad'>
           <div className='logoCon middle'>

@@ -1,13 +1,17 @@
 // Router.js
-import React, { Component } from 'react';
+import React, { Component, useEffect, useLayoutEffect } from 'react';
 import HomePage from './pages/HomePage';
 import { About } from './pages/AboutPage';
-import Firstpage from './pages/Firstpage';
-import Secpage from './pages/SecPage';
-import Thirdpage from './pages/ThirdPage';
+import Firstpage from './pages/ChaatAI';
+import Secpage from './pages/Forcast';
+import Thirdpage from './pages/Lexicon';
+import PixieShop from './pages/PixieShop';
+import Starbucks from './pages/Starbucks';
+import Ulamfinder from './pages/Ulamfinder';
 
 class Router extends Component {
   constructor() {
+    
     super();
     this.state = {
       currentRoute: window.location.pathname,
@@ -21,7 +25,13 @@ class Router extends Component {
     });
   }
 
+  componentDidUpdate() {
+    // Scroll to the top of the page whenever the route changes
+    window.scrollTo(0, 0);
+  }
+
   render() {
+
     const { currentRoute } = this.state;
 
     switch (currentRoute) {
@@ -29,17 +39,21 @@ class Router extends Component {
         return <HomePage />;
       case '/about':
         return <About />;
-      // Add more cases for other routes
-      case '/firstpage':
+      case '/ChaatAI':
         return <Firstpage />;
-      case '/secpage':
+      case '/Forcast':
         return <Secpage />;
-      case '/thirdpage':
-        return <Thirdpage />
+      case '/Lexicon':
+        return <Thirdpage />;
+      case '/PixieShop':
+        return <PixieShop />;
+      case '/starbucks':
+        return <Starbucks />;
+      case '/ulamfinder':
+        return <Ulamfinder />;
       default:
-        return <div>404 - Not Founds</div>;
+        return <div>404 - Not Found</div>;
     }
   }
 }
-
 export default Router;

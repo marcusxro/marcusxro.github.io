@@ -12,7 +12,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 export const About = () => {
   window.scrollTo(0, 0)
   const hoverTxt = document.querySelectorAll('.words')
-  
+
   hoverTxt.forEach((n) => {
     n.addEventListener("click", () => {
       alert("gao")
@@ -32,10 +32,14 @@ export const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     document.title = "ABOUT"
+    gsap.to('.sticky', { right: 0, duration: 0.8, zIndex: 9999 })
     gsap.registerPlugin(ScrollTrigger)
     const text = new SplitType('.staggs', { types: 'words, chars' })
-    const tec = new SplitType('.txts', { types: 'words, chars', wordClass: 'words'})
-
+    const tec = new SplitType('.txts', { types: 'words, chars', wordClass: 'words' })
+    gsap.to('header', {
+      opacity: 1,
+      duration: 0.8
+    })
     gsap.to('.word', {
       opacity: 1,
       stagger: 0.03,
@@ -53,11 +57,11 @@ export const About = () => {
       scrollTrigger: {
         trigger: '.techs',
         start: 'top 80%',
-     }
+      }
     })
-    
 
-    
+
+
     gsap.to('.staggzText', {
       y: 0,
       stagger: 0.4,
@@ -65,41 +69,66 @@ export const About = () => {
       scrollTrigger: {
         trigger: '.offers',
         start: 'top 80%',
-     }
+      }
     })
-    
-   
+
+
     gsap.to('.offerTop', {
       width: "100%",
       scrollTrigger: {
         trigger: '.offers',
         start: 'top 80%',
-     }
+      }
     })
-    
+
     gsap.to('.offerBot', {
       width: "100%",
       delay: 0.05,
-    
+
       scrollTrigger: {
         trigger: '.offers',
         start: 'top 80%',
-     }
+      }
+    })
+
+    gsap.to('.cTexts', {
+      y: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.contactText',
+        start: 'top 80%',
+      }
+    })
+    gsap.to('p', {
+      lineHeight: "100%",
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.contactText',
+        start: 'top 80%',
+      }
+    })
+    gsap.to('.circle', {
+      scale: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.contactText',
+        start: 'top 80%',
+      }
     })
 
 
-    
+
     const tl = gsap.timeline()
     tl.to('.textBel', {
       y: 0,
       duration: 1,
       stagger: 0.3
     })
-    .to('.image', {
-      opacity: 1,
-      duration: 2,
-      delay: 0.3
-    })
+      .to('.image', {
+        opacity: 1,
+        duration: 2,
+        delay: 0.3
+      })
   }, [])
   return (
     <div className='aboutCon'>
@@ -118,19 +147,19 @@ export const About = () => {
         <div className='secAbtCon'>
           <div className='txtCon'>
             <div className='greet'>
-            <div className='textBel'>
-            HELLO
-            </div>
+              <div className='textBel'>
+                HELLO
+              </div>
             </div>
             <div className='firstTxt'>
-            <div className='textBel'>
-            I'm an artisan of
-            </div>
+              <div className='textBel'>
+                I'm an artisan of
+              </div>
             </div>
             <div className='secTxt'>
-            <div className='textBel'>
-            the digital realm
-            </div>
+              <div className='textBel'>
+                the digital realm
+              </div>
             </div>
           </div>
         </div>
@@ -139,18 +168,18 @@ export const About = () => {
       </div>
 
       <div className='aboutText'>
-          <div className='descAbt'>
+        <div className='descAbt'>
 
           <div className='staggs'>
-          I'm Marcus Salopaso, a passionate and aspiring full-stack developer and software engineer. 
-                With 6 months of hands-on experience in front-end development, I'm dedicated to crafting 
-                seamless and user-friendly digital experiences. 
+            I'm Marcus Salopaso, a passionate and aspiring full-stack developer and software engineer.
+            With 6 months of hands-on experience in front-end development, I'm dedicated to crafting
+            seamless and user-friendly digital experiences.
           </div>
           <div className='staggs'>
-          My journey into the world of coding began 
-          with a curiosity for creating captivating websites, 
-          and it has since evolved into a deep-rooted passion 
-          for problem-solving and building innovative solutions.
+            My journey into the world of coding began
+            with a curiosity for creating captivating websites,
+            and it has since evolved into a deep-rooted passion
+            for problem-solving and building innovative solutions.
           </div>
           <div className='techs'>
             <div className='techText txts'>TECHNOLGIES I USE</div>
@@ -159,31 +188,50 @@ export const About = () => {
             </div>
           </div>
 
-          </div>
-          <div className='offers'>
-            <div className='offerTop'></div>
-            <div className='offerCon'>
-              <div className='staggz'>
-                  <div className='staggzText'>
+        </div>
+        <div className='offers'>
+          <div className='offerTop'></div>
+          <div className='offerCon'>
+            <div className='staggz'>
+              <div className='staggzText'>
                   //UI & UX <span>DESIGN</span>
-                  </div>
-              </div>
-              <div className='staggz'>
-                <div className='staggzText'>
-                //FRONT-END <span>DEV</span>
-                  </div>
-              </div>
-              <div className='staggz'>
-                <div className='staggzText'>
-                //RESTful <span>API</span>
-                  </div>
               </div>
             </div>
-            <div className='offerBot'></div>
+            <div className='staggz'>
+              <div className='staggzText'>
+                //FRONT-END <span>DEV</span>
+              </div>
+            </div>
+            <div className='staggz'>
+              <div className='staggzText'>
+                //RESTful <span>API</span>
+              </div>
+            </div>
           </div>
-      
-
-          <LowerFooter />
+          <div className='offerBot'></div>
+        </div>
+        <div className='contactCon'>
+          <div className='contactText'>
+            <div className='cText'>
+              <div className='cTexts'>
+              LET'S TURN YOUR IDEAS INTO REALITY.
+              </div>
+            </div>
+            <p>I'd be delighted to talk, so please do get in touch, Send me an email, or dm me in my Facebook.</p>
+          </div>
+          
+           <div className='circle' onClick={() => {
+              window.location.href = "mailto:marcussalopaso1@gmail.com"
+           }}>
+           <div className='contactText'>SAY HELLO</div>
+    
+            <div className='contactArrow'>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+           </div>
+          </div>
+          <div className='footerBreak'></div>
+        <LowerFooter />
       </div>
     </div>
   )
